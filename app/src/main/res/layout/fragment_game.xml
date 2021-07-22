@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="378dp"
-        android:layout_height="378dp"
+        android:layout_width="0dp"
+        android:layout_height="380dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.331"
+        app:layout_constraintVertical_bias="0.099"
         app:srcCompat="@drawable/pic1" />
 
     <Button
@@ -31,8 +31,8 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="120"
-        android:layout_height="50"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="64dp"
         android:text="Button"
@@ -41,8 +41,8 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="120"
-        android:layout_height="50"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="24dp"
         android:text="Button"
@@ -51,8 +51,8 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="120"
-        android:layout_height="50"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="64dp"
         android:text="Button"
