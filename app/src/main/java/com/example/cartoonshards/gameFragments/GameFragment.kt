@@ -1,39 +1,32 @@
 package com.example.cartoonshards.gameFragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
-import com.example.cartoonshards.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.cartoonshards.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {
 
+    private val viewModel: GameViewModel by viewModels()
     private lateinit var binding: FragmentGameBinding
-    private var questionIndex = 0
     private lateinit var shards: List<View>
+    private lateinit var answersButtonList: List<Button>
 
-    data class Question(val image: Int, val answers: List<String>)
-
-    private val questions: MutableList<Question> = mutableListOf(
-        Question(
-            image = R.drawable.tom_jerry,
-            answers = listOf("Tom & Jerry", "Finding Nemo", "Woody Woodpecker", "Lion King")
-        ),
-        Question(
-            image = R.drawable.stitch,
-            answers = listOf("Lilo & Stitch", "Jungle Book", "Bamby and 1000 Rabbits", "Duck Story")
-        )
-    )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
         binding = FragmentGameBinding.inflate(layoutInflater)
+
+        answersButtonList = listOf(
+            binding.answer1, binding.answer2, binding.answer3, binding.answer4
+        )
 
         shards = listOf(
             binding.shard1, binding.shard2, binding.shard3, binding.shard4,
@@ -43,47 +36,38 @@ class GameFragment : Fragment() {
             binding.shard16
         )
 
-        randomizeQuestions()
+        viewModel.setupQuestionAndAnswers()
+
         setScreen()
-        setListener()
+        setShardListener()
         setAnswerListener()
 
         return binding.root
     }
 
-    private fun randomizeQuestions() {
-        questions.shuffle()
-        questionIndex = 0
-    }
 
     private fun setScreen() {
-        binding.imageView.setImageResource(questions[questionIndex].image)
-        val shuffledAnswers = questions[questionIndex].answers.toMutableList()
-        shuffledAnswers.shuffle()
+        binding.imageView.setImageResource(viewModel.currentQuestion.image)
 
         with(binding) {
-            answer1.text = shuffledAnswers[0]
-            answer2.text = shuffledAnswers[1]
-            answer3.text = shuffledAnswers[2]
-            answer4.text = shuffledAnswers[3]
+            answer1.text = getString(viewModel.answersArray[0])
+            answer2.text = getString(viewModel.answersArray[1])
+            answer3.text = getString(viewModel.answersArray[2])
+            answer4.text = getString(viewModel.answersArray[3])
         }
     }
 
-    private fun setListener() {
+    private fun setShardListener() {
         for (item in shards) {
             item.setOnClickListener { it.visibility = View.INVISIBLE }
         }
     }
 
     private fun setAnswerListener() {
-        val answerButton: List<Button> = listOf(
-            binding.answer1, binding.answer2, binding.answer3, binding.answer4
-        )
-
-        for (item in answerButton) {
+        for (item in answersButtonList) {
             item.setOnClickListener {
-                if (item.text == questions[questionIndex].answers[0]) {
-                    questionIndex = (questionIndex + 1) % questions.size
+                if (item.text == getString(viewModel.currentQuestion.answer)) {
+                    viewModel.setupQuestionAndAnswers()
                     refreshShards()
                     setScreen()
                 } else {

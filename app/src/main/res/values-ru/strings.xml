@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Угадай мультик</string>
+    <string name="cartoon_shards">Cartoon Shards</string>
+    <string name="play">Играть</string>
+    <string name="time_left">Время: %1$s</string>
+    <string name="your_score_text">Твой счёт:</string>
+    <string name="high_score">Лучший счёт:</string>
+    <string name="play_again">Ещё раз</string>
+
+    <string name="tom_and_jerry">Том и Джерри</string>
+    <string name="lilo_and_stitch">Лило и Стич</string>
+    <string name="lion_king">Король Лев</string>
+    <string name="finding_nemo">В поисках Немо</string>
+    <string name="ladybug_and_cat_noir">Леди Баг и Супер-Кот</string>
+    <string name="frozen">Холодное сердце</string>
+
+</resources>

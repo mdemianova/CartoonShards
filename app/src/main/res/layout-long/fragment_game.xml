@@ -23,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/tom_jerry" />
+        app:srcCompat="@drawable/tom_jerry_img" />
 
     <Button
         android:id="@+id/answer_1"
