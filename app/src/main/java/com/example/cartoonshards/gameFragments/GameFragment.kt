@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.cartoonshards.R
 import com.example.cartoonshards.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {
@@ -16,7 +17,6 @@ class GameFragment : Fragment() {
     private lateinit var binding: FragmentGameBinding
     private lateinit var shards: List<View>
     private lateinit var answersButtonList: List<Button>
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -48,7 +48,7 @@ class GameFragment : Fragment() {
 
     private fun setScreen() {
         binding.imageView.setImageResource(viewModel.currentQuestion.image)
-
+        binding.scoreView.text = getString(R.string.your_score_text, viewModel.score)
         with(binding) {
             answer1.text = getString(viewModel.answersArray[0])
             answer2.text = getString(viewModel.answersArray[1])
@@ -67,6 +67,7 @@ class GameFragment : Fragment() {
         for (item in answersButtonList) {
             item.setOnClickListener {
                 if (item.text == getString(viewModel.currentQuestion.answer)) {
+                    viewModel.addScore()
                     viewModel.setupQuestionAndAnswers()
                     refreshShards()
                     setScreen()
@@ -78,8 +79,6 @@ class GameFragment : Fragment() {
     }
 
     private fun refreshShards() {
-        for (item in shards) {
-            item.visibility = View.VISIBLE
-        }
+        shards.forEach { it.visibility = View.VISIBLE }
     }
 }

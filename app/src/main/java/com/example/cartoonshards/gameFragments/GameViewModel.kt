@@ -14,6 +14,14 @@ class GameViewModel : ViewModel() {
 
     private val usedQuestions = mutableListOf<Question>()
 
+    private var _score: Int = 0
+    val score: Int
+        get() = _score
+
+    fun addScore() {
+        _score += 100
+    }
+
     fun setupQuestionAndAnswers() {
         setupCurrentQuestion()
         setupAnswersArray()

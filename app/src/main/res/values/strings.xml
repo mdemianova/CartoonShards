@@ -3,7 +3,7 @@
     <string name="cartoon_shards">Cartoon Shards</string>
     <string name="play">Play</string>
     <string name="time_left">Time left: %1$s</string>
-    <string name="your_score_text">Your Score:</string>
+    <string name="your_score_text">Score: %d</string>
     <string name="high_score">High Score:</string>
     <string name="play_again">Play Again</string>
 
