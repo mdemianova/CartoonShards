@@ -20,7 +20,7 @@ class GameFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentGameBinding.inflate(layoutInflater)
 
@@ -36,25 +36,30 @@ class GameFragment : Fragment() {
             binding.shard16
         )
 
-        viewModel.setupQuestionAndAnswers()
+        viewModel.initializeData()
 
-        setScreen()
+        viewModel.currentQuestion.observe(viewLifecycleOwner,
+            { newQuestion ->
+                binding.imageView.setImageResource(newQuestion.image)
+            })
+
+        viewModel.answersArray.observe(viewLifecycleOwner,
+            { newAnswersArray ->
+                binding.answer1.text = getString(newAnswersArray[0])
+                binding.answer2.text = getString(newAnswersArray[1])
+                binding.answer3.text = getString(newAnswersArray[2])
+                binding.answer4.text = getString(newAnswersArray[3])
+            })
+
+        viewModel.score.observe(viewLifecycleOwner,
+            { newScore ->
+                binding.scoreView.text = getString(R.string.your_score_text, newScore)
+            })
+
         setShardListener()
         setAnswerListener()
 
         return binding.root
-    }
-
-
-    private fun setScreen() {
-        binding.imageView.setImageResource(viewModel.currentQuestion.image)
-        binding.scoreView.text = getString(R.string.your_score_text, viewModel.score)
-        with(binding) {
-            answer1.text = getString(viewModel.answersArray[0])
-            answer2.text = getString(viewModel.answersArray[1])
-            answer3.text = getString(viewModel.answersArray[2])
-            answer4.text = getString(viewModel.answersArray[3])
-        }
     }
 
     private fun setShardListener() {
@@ -66,11 +71,10 @@ class GameFragment : Fragment() {
     private fun setAnswerListener() {
         for (item in answersButtonList) {
             item.setOnClickListener {
-                if (item.text == getString(viewModel.currentQuestion.answer)) {
+                if (item.text == getString(viewModel.currentQuestion.value!!.answer)) {
                     viewModel.addScore()
                     viewModel.setupQuestionAndAnswers()
                     refreshShards()
-                    setScreen()
                 } else {
                     Toast.makeText(this.context, "Wrong", Toast.LENGTH_SHORT).show()
                 }

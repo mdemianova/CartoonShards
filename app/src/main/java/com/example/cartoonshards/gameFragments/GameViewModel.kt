@@ -1,25 +1,35 @@
 package com.example.cartoonshards.gameFragments
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class GameViewModel : ViewModel() {
 
-    private lateinit var _currentQuestion: Question
-    val currentQuestion: Question
+    private val _currentQuestion = MutableLiveData<Question>()
+    val currentQuestion: LiveData<Question>
         get() = _currentQuestion
 
-    private var _answersArray = mutableListOf<Int>()
-    val answersArray: List<Int>
+    private val _answersArray = MutableLiveData<MutableList<Int>>()
+    val answersArray: LiveData<MutableList<Int>>
         get() = _answersArray
 
     private val usedQuestions = mutableListOf<Question>()
 
-    private var _score: Int = 0
-    val score: Int
+    private val tempAnswersArray = mutableListOf<Int>()
+
+    private val _score = MutableLiveData<Int>()
+    val score: LiveData<Int>
         get() = _score
 
+    fun initializeData() {
+        _answersArray.value = mutableListOf()
+        _score.value = 0
+        setupQuestionAndAnswers()
+    }
+
     fun addScore() {
-        _score += 100
+        _score.value = _score.value!!.plus(100)
     }
 
     fun setupQuestionAndAnswers() {
@@ -36,37 +46,38 @@ class GameViewModel : ViewModel() {
     }
 
     private fun setupNewQuestion() {
-        _currentQuestion = allQuestionsList.random()
-        if (_currentQuestion in usedQuestions) {
+        _currentQuestion.value = allQuestionsList.random()
+        if (_currentQuestion.value in usedQuestions) {
             setupNewQuestion()
         }
-        usedQuestions.add(_currentQuestion)
+        usedQuestions.add(_currentQuestion.value!!)
     }
 
     private fun setupOldQuestion() {
         val tempQuestion = allQuestionsList.random()
-        if (tempQuestion == _currentQuestion) {
+        if (tempQuestion == _currentQuestion.value) {
             setupOldQuestion()
         } else {
-            _currentQuestion = tempQuestion
+            _currentQuestion.value = tempQuestion
         }
     }
 
     private fun setupAnswersArray() {
-        _answersArray.clear()
-        _answersArray.add(_currentQuestion.answer)
+        tempAnswersArray.clear()
+        tempAnswersArray.add(_currentQuestion.value!!.answer)
         repeat(3) {
             addAnswer()
         }
-        _answersArray.shuffle()
+        tempAnswersArray.shuffle()
+        _answersArray.value = tempAnswersArray
     }
 
     private fun addAnswer() {
         val tempAnswer = allAnswersList.random()
-        if (tempAnswer in _answersArray) {
+        if (tempAnswer in tempAnswersArray) {
             addAnswer()
         } else {
-            _answersArray.add(tempAnswer)
+            tempAnswersArray.add(tempAnswer)
         }
     }
 
