@@ -5,7 +5,7 @@
     <string name="play">Играть</string>
     <string name="time_left">Время: %1$s</string>
     <string name="your_score_text">Счёт: %d</string>
-    <string name="high_score">Лучший счёт:</string>
+    <string name="high_score">Лучший счёт: %d</string>
     <string name="play_again">Ещё раз</string>
 
     <string name="tom_and_jerry">Том и Джерри</string>

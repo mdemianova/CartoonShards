@@ -4,8 +4,9 @@
     <string name="play">Play</string>
     <string name="time_left">Time left: %1$s</string>
     <string name="your_score_text">Score: %d</string>
-    <string name="high_score">High Score:</string>
+    <string name="high_score">High Score: %d</string>
     <string name="play_again">Play Again</string>
+    <string name="shared_pref_name" translatable="false">"finish_fragment_info"</string>
 
     <string name="tom_and_jerry">Tom and Jerry</string>
     <string name="lilo_and_stitch">Lilo and Stitch</string>

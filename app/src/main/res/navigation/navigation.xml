@@ -14,5 +14,20 @@
     <fragment
         android:id="@+id/gameFragment"
         android:name="com.example.cartoonshards.gameFragments.GameFragment"
-        android:label="GameFragment" />
+        android:label="GameFragment" >
+        <action
+            android:id="@+id/action_gameFragment_to_finishFragment"
+            app:destination="@id/finishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishFragment"
+        android:name="com.example.cartoonshards.gameFragments.FinishFragment"
+        android:label="FinishFragment" >
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_finishFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
 </navigation>

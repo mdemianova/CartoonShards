@@ -1,6 +1,7 @@
 package com.example.cartoonshards.gameFragments
 
 import android.os.Bundle
+import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.cartoonshards.R
 import com.example.cartoonshards.databinding.FragmentGameBinding
 
@@ -36,8 +38,6 @@ class GameFragment : Fragment() {
             binding.shard16
         )
 
-        viewModel.initializeData()
-
         viewModel.currentQuestion.observe(viewLifecycleOwner,
             { newQuestion ->
                 binding.imageView.setImageResource(newQuestion.image)
@@ -56,6 +56,21 @@ class GameFragment : Fragment() {
                 binding.scoreView.text = getString(R.string.your_score_text, newScore)
             })
 
+        viewModel.currentTime.observe(viewLifecycleOwner,
+            { newTime ->
+                binding.timeView.text = DateUtils.formatElapsedTime(newTime)
+
+            })
+
+        viewModel.eventGameFinish.observe(viewLifecycleOwner,
+            {isFinished ->
+                if (isFinished) {
+                    val finalScore = viewModel.score.value ?: 0
+                    val action = GameFragmentDirections.actionGameFragmentToFinishFragment(finalScore)
+                    findNavController().navigate(action)
+                }
+            })
+
         setShardListener()
         setAnswerListener()
 
@@ -64,7 +79,10 @@ class GameFragment : Fragment() {
 
     private fun setShardListener() {
         for (item in shards) {
-            item.setOnClickListener { it.visibility = View.INVISIBLE }
+            item.setOnClickListener {
+                it.visibility = View.INVISIBLE
+                viewModel.reduceScore()
+            }
         }
     }
 
@@ -73,9 +91,11 @@ class GameFragment : Fragment() {
             item.setOnClickListener {
                 if (item.text == getString(viewModel.currentQuestion.value!!.answer)) {
                     viewModel.addScore()
+                    viewModel.addTime()
                     viewModel.setupQuestionAndAnswers()
                     refreshShards()
                 } else {
+                    viewModel.reduceTime()
                     Toast.makeText(this.context, "Wrong", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -83,6 +103,8 @@ class GameFragment : Fragment() {
     }
 
     private fun refreshShards() {
-        shards.forEach { it.visibility = View.VISIBLE }
+        shards.forEach {
+            it.visibility = View.VISIBLE
+        }
     }
 }
