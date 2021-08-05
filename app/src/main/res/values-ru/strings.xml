@@ -3,7 +3,7 @@
     <string name="app_name">Угадай мультик</string>
     <string name="cartoon_shards">Cartoon Shards</string>
     <string name="play">Играть</string>
-    <string name="time_left">Время: %1$s</string>
+    <string name="time_left">Время %1$s</string>
     <string name="your_score_text">Счёт: %d</string>
     <string name="high_score">Лучший счёт: %d</string>
     <string name="play_again">Ещё раз</string>

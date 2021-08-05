@@ -13,4 +13,9 @@
     <color name="orange_dark">#C75B39</color>
     <color name="light_blue_dark">#1BA9CC</color>
     <color name="orange_light">#FFBB93</color>
+
+    <color name="shard_green">#B4F8C8</color>
+    <color name="shard_pink">#FFAEBC</color>
+    <color name="shard_blue">#C1E1DC</color>
+    <color name="shard_yellow">#FBE7C6</color>
 </resources>

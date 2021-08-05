@@ -2,7 +2,7 @@
     <string name="app_name">Cartoon Shards</string>
     <string name="cartoon_shards">Cartoon Shards</string>
     <string name="play">Play</string>
-    <string name="time_left">Time left: %1$s</string>
+    <string name="time_left">Time %1$s</string>
     <string name="your_score_text">Score: %d</string>
     <string name="high_score">High Score: %d</string>
     <string name="play_again">Play Again</string>
