@@ -177,6 +177,10 @@ class GameViewModel : ViewModel() {
         return usedQuestions.containsAll(allQuestionsList)
     }
 
+    fun onGameFinishComplete() {
+        _eventGameFinish.value = false
+    }
+
     override fun onCleared() {
         super.onCleared()
         timer.cancel()

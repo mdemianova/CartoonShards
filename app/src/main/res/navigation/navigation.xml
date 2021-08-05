@@ -18,6 +18,7 @@
         <action
             android:id="@+id/action_gameFragment_to_finishFragment"
             app:destination="@id/finishFragment"
+            app:popUpTo="@id/titleFragment"
             app:popUpToInclusive="false" />
     </fragment>
     <fragment
