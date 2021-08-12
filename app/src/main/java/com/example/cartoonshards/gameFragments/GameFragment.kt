@@ -1,5 +1,7 @@
 package com.example.cartoonshards.gameFragments
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.text.format.DateUtils
@@ -81,7 +83,8 @@ class GameFragment : Fragment() {
     private fun setShardListener() {
         for (item in shards) {
             item.setOnClickListener {
-                it.visibility = View.INVISIBLE
+                //it.visibility = View.INVISIBLE
+                fadeShard(it)
                 viewModel.reduceScore()
             }
         }
@@ -100,7 +103,7 @@ class GameFragment : Fragment() {
                 } else {
                     wrongAnswerShake(it)
                     viewModel.reduceTime()
-                    //Toast.makeText(this.context, "Wrong", Toast.LENGTH_SHORT).show()
+
                 }
             }
         }
@@ -119,19 +122,21 @@ class GameFragment : Fragment() {
         animator.repeatMode = ObjectAnimator.REVERSE
         animator.start()
     }
-    /*private fun correctAnswerScale(view: View) {
-        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 1.2f)
-        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1.2f)
-        val animator = ObjectAnimator.ofPropertyValuesHolder(view, scaleX, scaleY)
-        animator.repeatCount = 1
-        animator.repeatMode = ObjectAnimator.REVERSE
-        animator.start()
-    }*/
 
-    /*private fun showFullPicture() {
-        shards.forEach {
-            it.visibility = View.INVISIBLE
-        }
-        Thread.sleep(300)
-    }*/
+    private fun fadeShard(view: View) {
+        val animator = ObjectAnimator.ofFloat(view, View.ALPHA, 0f)
+        animator.duration = 200
+        animator.addListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationStart(animation: Animator?) {
+                view.isEnabled = false
+            }
+
+            override fun onAnimationEnd(animation: Animator?) {
+                view.visibility = View.INVISIBLE
+                view.alpha = 1f
+                view.isEnabled = true
+            }
+        })
+        animator.start()
+    }
 }
