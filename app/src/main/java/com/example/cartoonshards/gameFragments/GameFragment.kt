@@ -1,12 +1,12 @@
 package com.example.cartoonshards.gameFragments
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -91,13 +91,16 @@ class GameFragment : Fragment() {
         for (item in answersButtonList) {
             item.setOnClickListener {
                 if (item.text == getString(viewModel.currentQuestion.value!!.answer)) {
+                    //correctAnswerScale(it)
                     viewModel.addScore()
                     viewModel.addTime()
+                    //showFullPicture()
                     viewModel.setupQuestionAndAnswers()
                     refreshShards()
                 } else {
+                    wrongAnswerShake(it)
                     viewModel.reduceTime()
-                    Toast.makeText(this.context, "Wrong", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this.context, "Wrong", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -108,4 +111,27 @@ class GameFragment : Fragment() {
             it.visibility = View.VISIBLE
         }
     }
+
+    private fun wrongAnswerShake(view: View) {
+        val animator = ObjectAnimator.ofFloat(view, View.TRANSLATION_X, 0f, -5f, 5f)
+        animator.duration = 100
+        animator.repeatCount = 3
+        animator.repeatMode = ObjectAnimator.REVERSE
+        animator.start()
+    }
+    /*private fun correctAnswerScale(view: View) {
+        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 1.2f)
+        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1.2f)
+        val animator = ObjectAnimator.ofPropertyValuesHolder(view, scaleX, scaleY)
+        animator.repeatCount = 1
+        animator.repeatMode = ObjectAnimator.REVERSE
+        animator.start()
+    }*/
+
+    /*private fun showFullPicture() {
+        shards.forEach {
+            it.visibility = View.INVISIBLE
+        }
+        Thread.sleep(300)
+    }*/
 }

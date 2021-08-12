@@ -9,7 +9,7 @@ class GameViewModel : ViewModel() {
 
     companion object {
         private const val ONE_SECOND = 1000L
-        private const val DEFAULT_GAME_TIME = 20000L
+        private const val DEFAULT_GAME_TIME = 200000L
         private const val INCREMENT_TIME = 3000L
         private const val DECREMENT_TIME = 2000L
         private const val GAME_OVER = 0L

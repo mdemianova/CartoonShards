@@ -8,11 +8,19 @@
     <string name="play_again">Play Again</string>
     <string name="shared_pref_name" translatable="false">"finish_fragment_info"</string>
 
-    <string name="tom_and_jerry">Tom and Jerry</string>
-    <string name="lilo_and_stitch">Lilo and Stitch</string>
     <string name="lion_king">Lion King</string>
-    <string name="finding_nemo">Finding Nemo</string>
     <string name="ladybug_and_cat_noir">Ladybug &amp; Cat Noir</string>
     <string name="frozen">Frozen</string>
+    <string name="tom_and_jerry">Tom and Jerry</string>
+    
+    <string name="lilo_and_stitch">Lilo and Stitch</string>
+    <string name="finding_nemo">Finding Nemo</string>
+    <string name="wall_e">WALL-E</string>
+    <string name="puss_in_boots">Puss in Boots</string>
+    <string name="tangled">Tangled</string>
+    <string name="ainbo">AINBO: Spirit of the Amazon</string>
+    <string name="luca">Luca</string>
+    <string name="vivo"> Vivo</string>
+    <string name="wish_dragon">Wish Dragon</string>
 
 </resources>

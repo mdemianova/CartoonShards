@@ -14,5 +14,11 @@
     <string name="finding_nemo">В поисках Немо</string>
     <string name="ladybug_and_cat_noir">Леди Баг и Супер-Кот</string>
     <string name="frozen">Холодное сердце</string>
-
+    <string name="wall_e">ВАЛЛ-И</string>
+    <string name="puss_in_boots">Кот в сапогах</string>
+    <string name="tangled">Рапунцель: Запутанная история</string>
+    <string name="ainbo">Айнбо. Сердце Амазонии</string>
+    <string name="luca">Лука</string>
+    <string name="vivo">Виво</string>
+    <string name="wish_dragon">Волшебный Дракон</string>
 </resources>
