@@ -44,6 +44,34 @@ val allQuestionsList: List<Question> = listOf(
     Question(
         image = R.drawable.wish_dragon,
         answer = R.string.wish_dragon
+    ),
+    Question(
+        image = R.drawable.despicable_me,
+        answer = R.string.despicable_me
+    ),
+    Question(
+        image = R.drawable.cars,
+        answer = R.string.cars
+    ),
+    Question(
+        image = R.drawable.shrek,
+        answer = R.string.shrek
+    ),
+    Question(
+        image = R.drawable.hotel_transylvania,
+        answer = R.string.hotel_transylvania
+    ),
+    Question(
+        image = R.drawable.monsters_inc,
+        answer = R.string.monsers_inc
+    ),
+    Question(
+        image = R.drawable.how_to_train_your_dragon,
+        answer = R.string.how_to_train_your_dragon
+    ),
+    Question(
+        image = R.drawable.kung_fu_panda,
+        answer = R.string.kung_fu_panda
     )
 )
 
@@ -60,5 +88,12 @@ val allAnswersList: List<Int> = listOf(
     R.string.tangled,
     R.string.vivo,
     R.string.wall_e,
-    R.string.wish_dragon
+    R.string.wish_dragon,
+    R.string.despicable_me,
+    R.string.cars,
+    R.string.shrek,
+    R.string.hotel_transylvania,
+    R.string.monsers_inc,
+    R.string.how_to_train_your_dragon,
+    R.string.kung_fu_panda
 )

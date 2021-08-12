@@ -22,5 +22,12 @@
     <string name="luca">Luca</string>
     <string name="vivo"> Vivo</string>
     <string name="wish_dragon">Wish Dragon</string>
+    <string name="despicable_me">Despicable me</string>
+    <string name="cars">Cars</string>
+    <string name="hotel_transylvania">Hotel Transylvania</string>
+    <string name="shrek">Shrek</string>
+    <string name="monsers_inc">Monsters, Inc.</string>
+    <string name="how_to_train_your_dragon">How to Train Your Dragon</string>
+    <string name="kung_fu_panda">Kung Fu Panda</string>
 
 </resources>

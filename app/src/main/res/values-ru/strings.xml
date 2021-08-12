@@ -21,4 +21,11 @@
     <string name="luca">Лука</string>
     <string name="vivo">Виво</string>
     <string name="wish_dragon">Волшебный Дракон</string>
+    <string name="despicable_me">Гадкий я</string>
+    <string name="cars">Тачки</string>
+    <string name="hotel_transylvania">Монстры на каникулах</string>
+    <string name="shrek">Шрек</string>
+    <string name="monsers_inc">Корпорация Монстров</string>
+    <string name="how_to_train_your_dragon">Как приручить дракона</string>
+    <string name="kung_fu_panda">Кунг-фу Панда</string>
 </resources>
