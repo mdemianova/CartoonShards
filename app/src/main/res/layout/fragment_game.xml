@@ -7,6 +7,20 @@
     android:padding="16dp">
 
     <TextView
+        android:id="@+id/score_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/score_view"
+        app:layout_constraintEnd_toEndOf="@+id/score_view" />
+
+    <TextView
+        android:id="@+id/time_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/time_view"
+        app:layout_constraintEnd_toEndOf="@+id/time_view" />
+
+    <TextView
         android:id="@+id/score_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -55,20 +56,24 @@ class GameFragment : Fragment() {
 
         viewModel.score.observe(viewLifecycleOwner,
             { newScore ->
+                if (viewModel.isGameStarted) {
+                    scoreAnimationFade()
+                }
                 binding.scoreView.text = getString(R.string.your_score_text, newScore)
             })
 
         viewModel.currentTime.observe(viewLifecycleOwner,
             { newTime ->
-                binding.timeView.text = getString(R.string.time_left, DateUtils.formatElapsedTime(newTime))
-
+                binding.timeView.text =
+                    getString(R.string.time_left, DateUtils.formatElapsedTime(newTime))
             })
 
         viewModel.eventGameFinish.observe(viewLifecycleOwner,
-            {isFinished ->
+            { isFinished ->
                 if (isFinished) {
                     val finalScore = viewModel.score.value ?: 0
-                    val action = GameFragmentDirections.actionGameFragmentToFinishFragment(finalScore)
+                    val action =
+                        GameFragmentDirections.actionGameFragmentToFinishFragment(finalScore)
                     findNavController().navigate(action)
                     viewModel.onGameFinishComplete()
                 }
@@ -83,7 +88,6 @@ class GameFragment : Fragment() {
     private fun setShardListener() {
         for (item in shards) {
             item.setOnClickListener {
-                //it.visibility = View.INVISIBLE
                 fadeShard(it)
                 viewModel.reduceScore()
             }
@@ -105,6 +109,7 @@ class GameFragment : Fragment() {
                     viewModel.reduceTime()
 
                 }
+                timeAnimationFade()
             }
         }
     }
@@ -116,7 +121,7 @@ class GameFragment : Fragment() {
     }
 
     private fun wrongAnswerShake(view: View) {
-        val animator = ObjectAnimator.ofFloat(view, View.TRANSLATION_X, 0f, -5f, 5f)
+        val animator = ObjectAnimator.ofFloat(view, View.TRANSLATION_X, 0f, -6f, 6f)
         animator.duration = 100
         animator.repeatCount = 3
         animator.repeatMode = ObjectAnimator.REVERSE
@@ -137,6 +142,48 @@ class GameFragment : Fragment() {
                 view.isEnabled = true
             }
         })
+        animator.start()
+    }
+
+    private fun scoreAnimationFade() {
+        binding.scoreAnimation.alpha = 0f
+        val animator = ObjectAnimator.ofFloat(binding.scoreAnimation, View.ALPHA, 1f)
+        animator.repeatCount = 1
+        animator.repeatMode = ObjectAnimator.REVERSE
+        if (viewModel.scoreIsIncreasing) {
+            binding.scoreAnimation.setTextColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.correct_answer
+                )
+            )
+            binding.scoreAnimation.text = getString(R.string.score_delta, "+", viewModel.scoreDelta)
+
+        } else {
+            binding.scoreAnimation.setTextColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.wrong_answer
+                )
+            )
+            binding.scoreAnimation.text = getString(R.string.score_delta, "-", viewModel.scoreDelta)
+
+        }
+        animator.start()
+    }
+
+    private fun timeAnimationFade() {
+        binding.timeAnimation.alpha = 0f
+        val animator =  ObjectAnimator.ofFloat(binding.timeAnimation, View.ALPHA, 1f)
+        animator.repeatCount = 1
+        animator.repeatMode = ObjectAnimator.REVERSE
+        if (viewModel.isTimeIncreasing) {
+            binding.timeAnimation.setTextColor(ContextCompat.getColor(requireContext(), R.color.correct_answer))
+            binding.timeAnimation.text = getString(R.string.time_delta, "+", viewModel.incrementTimeInSec)
+        } else {
+            binding.timeAnimation.setTextColor(ContextCompat.getColor(requireContext(), R.color.wrong_answer))
+            binding.timeAnimation.text = getString(R.string.time_delta, "-", viewModel.decrementTimeInSec)
+        }
         animator.start()
     }
 }

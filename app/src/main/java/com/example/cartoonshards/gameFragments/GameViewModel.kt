@@ -13,8 +13,11 @@ class GameViewModel : ViewModel() {
         private const val INCREMENT_TIME = 3000L
         private const val DECREMENT_TIME = 2000L
         private const val GAME_OVER = 0L
-
+        private const val CORRECT_GUESS_POINTS = 100
     }
+
+    val incrementTimeInSec = INCREMENT_TIME / 1000
+    val decrementTimeInSec = DECREMENT_TIME / 1000
 
     private val _currentQuestion = MutableLiveData<Question>()
     val currentQuestion: LiveData<Question>
@@ -44,16 +47,26 @@ class GameViewModel : ViewModel() {
 
     private var shardCounter = 0
 
-//    // The String version of the current time
-//    val currentTimeString = Transformations.map(currentTime) { time ->
-//        DateUtils.formatElapsedTime(time)
-//    }
+    private var _scoreIsIncreasing = false
+    val scoreIsIncreasing: Boolean
+        get() = _scoreIsIncreasing
+
+    private var _scoreDelta = 0
+    val scoreDelta: Int
+        get() = _scoreDelta
+
+    private var _isGameStarted = false
+    val isGameStarted: Boolean
+    get() = _isGameStarted
+
+    private var _isTimeIncreasing = false
+    val isTimeIncreasing: Boolean
+    get() = _isTimeIncreasing
 
     init {
         _answersArray.value = mutableListOf()
         _score.value = 0
         setupQuestionAndAnswers()
-
         timer = object : CountDownTimer(DEFAULT_GAME_TIME, ONE_SECOND) {
 
             override fun onTick(millisUntilFinished: Long) {
@@ -69,6 +82,8 @@ class GameViewModel : ViewModel() {
     }
 
     fun addTime() {
+        _isTimeIncreasing = true
+        _isGameStarted = true
         val newTime = _currentTime.value!!.times(1000).plus(INCREMENT_TIME)
         timer.cancel()
         timer = object : CountDownTimer(newTime, ONE_SECOND) {
@@ -85,6 +100,8 @@ class GameViewModel : ViewModel() {
     }
 
     fun reduceTime() {
+        _isTimeIncreasing = false
+        _isGameStarted = true
         val newTime = _currentTime.value!!.times(1000).minus(DECREMENT_TIME)
         timer.cancel()
         timer = object : CountDownTimer(newTime, ONE_SECOND) {
@@ -101,12 +118,15 @@ class GameViewModel : ViewModel() {
     }
 
 
-
     fun addScore() {
-        _score.value = _score.value!!.plus(100)
+        _scoreIsIncreasing = true
+        _scoreDelta = CORRECT_GUESS_POINTS
+        _score.value = _score.value!!.plus(CORRECT_GUESS_POINTS)
     }
 
     fun reduceScore() {
+        _isGameStarted = true
+        _scoreIsIncreasing = false
         val reduceAmount = when (shardCounter) {
             0 -> 0
             1 -> 10
@@ -116,8 +136,10 @@ class GameViewModel : ViewModel() {
             else -> 50
         }
         if (_score.value!!.minus(reduceAmount) < 0) {
+            _scoreDelta = _score.value!!
             _score.value = 0
         } else {
+            _scoreDelta = reduceAmount
             _score.value = _score.value!!.minus(reduceAmount)
         }
         shardCounter++
@@ -162,6 +184,7 @@ class GameViewModel : ViewModel() {
         }
         tempAnswersArray.shuffle()
         _answersArray.value = tempAnswersArray
+
     }
 
     private fun addAnswer() {
@@ -186,3 +209,8 @@ class GameViewModel : ViewModel() {
         timer.cancel()
     }
 }
+
+//    // The String version of the current time
+//    val currentTimeString = Transformations.map(currentTime) { time ->
+//        DateUtils.formatElapsedTime(time)
+//    }
