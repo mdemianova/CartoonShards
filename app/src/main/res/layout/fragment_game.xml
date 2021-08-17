@@ -11,20 +11,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/score_view"
-        app:layout_constraintEnd_toEndOf="@+id/score_view" />
+        app:layout_constraintEnd_toEndOf="@+id/score_view"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/time_animation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/time_view"
-        app:layout_constraintEnd_toEndOf="@+id/time_view" />
+        app:layout_constraintEnd_toEndOf="@+id/time_view"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/score_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
         android:text="@string/your_score_text"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="parent" />
@@ -96,7 +98,7 @@
         android:layout_height="wrap_content"
         android:text="@string/time_left"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/score_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -253,7 +255,6 @@
 
     <TextView
         android:id="@+id/shard13"
-
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#8F8F8F"
