@@ -60,5 +60,37 @@
     <string name="over_the_hedge">Over the Hedge</string>
     <string name="cinderella">Cinderella</string>
     <string name="angry_birds">Angry Birds</string>
+    <string name="gravity_falls">Gravity Falls</string>
+    <string name="adventure_time">Adventure Time</string>
+    <string name="simpsons">The Simpsons</string>
+    <string name="sponge_bob">SpongeBob SquarePants</string>
+    <string name="my_little_pony">My Little Pony</string>
+    <string name="paw_patrol">PAW Patrol</string>
+    <string name="dalmatians">101 Dalmatians</string>
+    <string name="trolls_world_tour">Trolls World Tour</string>
+    <string name="queens_corgi">The Queen’s Corgi</string>
+    <string name="spider_man">Spider-Man</string>
+    <string name="inside_out">Inside Out</string>
+    <string name="good_dinosaur">The Good Dinosaur</string>
+    <string name="scooby_doo">Scooby-Doo</string>
+    <string name="batman">Batman</string>
+    <string name="raya">Raya and the Last Dragon</string>
+    <string name="coco">Coco</string>
+    <string name="chip_dale">Chip ’n Dale</string>
+    <string name="peppa_pig">Peppa Pig</string>
+    <string name="winnie_pooh">Winnie-the-Pooh</string>
+    <string name="ducktales">DuckTales</string>
+    <string name="soul">Soul</string>
+    <string name="winx_club">Winx Club</string>
+    <string name="looney_tunes">Looney Tunes</string>
+    <string name="rick_morty">Rick and Morty</string>
+    <string name="mickey_mouse">Mickey Mouse</string>
+    <string name="lego_movie">The LEGO Movie</string>
+    <string name="powerpuff_girls">The Powerpuff Girls</string>
+    <string name="grinch">The Grinch</string>
+    <string name="sing">Sing</string>
+    <string name="croods">The Croods</string>
+    <string name="smallfoot">Smallfoot</string>
+    <string name="ferdinand">Ferdinand</string>
 
 </resources>

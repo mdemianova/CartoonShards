@@ -139,7 +139,7 @@ val allQuestionsList: List<Question> = listOf(
     ),
     Question(
         image = R.drawable.hercules,
-        answer = R.drawable.hercules
+        answer = R.string.hercules
     ),
     Question(
         image = R.drawable.moana,
@@ -196,6 +196,134 @@ val allQuestionsList: List<Question> = listOf(
     Question(
         image = R.drawable.angry_birds,
         answer = R.string.angry_birds
+    ),
+    Question(
+        image = R.drawable.gravity_falls,
+        answer = R.string.gravity_falls
+    ),
+    Question(
+        image = R.drawable.adventure_time,
+        answer = R.string.adventure_time
+    ),
+    Question(
+        image = R.drawable.simpsons,
+        answer = R.string.simpsons
+    ),
+    Question(
+        image = R.drawable.sponge_bob,
+        answer = R.string.sponge_bob
+    ),
+    Question(
+        image = R.drawable.my_little_pony,
+        answer = R.string.my_little_pony
+    ),
+    Question(
+        image = R.drawable.paw_patrol,
+        answer = R.string.paw_patrol
+    ),
+    Question(
+        image = R.drawable.dalmatians,
+        answer = R.string.dalmatians
+    ),
+    Question(
+        image = R.drawable.trolls_world_tour,
+        answer = R.string.trolls_world_tour
+    ),
+    Question(
+        image = R.drawable.queens_corgi,
+        answer = R.string.queens_corgi
+    ),
+    Question(
+        image = R.drawable.spider_man,
+        answer = R.string.spider_man
+    ),
+    Question(
+        image = R.drawable.inside_out,
+        answer = R.string.inside_out
+    ),
+    Question(
+        image = R.drawable.good_dinosaur,
+        answer = R.string.good_dinosaur
+    ),
+    Question(
+        image = R.drawable.scooby_doo,
+        answer = R.string.scooby_doo
+    ),
+    Question(
+        image = R.drawable.batman,
+        answer = R.string.batman
+    ),
+    Question(
+        image = R.drawable.raya,
+        answer = R.string.raya
+    ),
+    Question(
+        image = R.drawable.coco,
+        answer = R.string.coco
+    ),
+    Question(
+        image = R.drawable.chip_dale,
+        answer = R.string.chip_dale
+    ),
+    Question(
+        image = R.drawable.peppa_pig,
+        answer = R.string.peppa_pig
+    ),
+    Question(
+        image = R.drawable.winnie_pooh,
+        answer = R.string.winnie_pooh
+    ),
+    Question(
+        image = R.drawable.ducktales,
+        answer = R.string.ducktales
+    ),
+    Question(
+        image = R.drawable.soul,
+        answer = R.string.soul
+    ),
+    Question(
+        image = R.drawable.looney_tunes,
+        answer = R.string.looney_tunes
+    ),
+    Question(
+        image = R.drawable.winx_club,
+        answer = R.string.winx_club
+    ),
+    Question(
+        image = R.drawable.rick_morty,
+        answer = R.string.rick_morty
+    ),
+    Question(
+        image = R.drawable.mickey_mouse,
+        answer = R.string.mickey_mouse
+    ),
+    Question(
+        image = R.drawable.lego_movie,
+        answer = R.string.lego_movie
+    ),
+    Question(
+        image = R.drawable.powerpuff_girls,
+        answer = R.string.powerpuff_girls
+    ),
+    Question(
+        image = R.drawable.grinch,
+        answer = R.string.grinch
+    ),
+    Question(
+        image = R.drawable.sing,
+        answer = R.string.sing
+    ),
+    Question(
+        image = R.drawable.croods,
+        answer = R.string.croods
+    ),
+    Question(
+        image = R.drawable.ferdinand,
+        answer = R.string.ferdinand
+    ),
+    Question(
+        image = R.drawable.smallfoot,
+        answer = R.string.smallfoot
     )
 )
 
@@ -248,5 +376,37 @@ val allAnswersList: List<Int> = listOf(
     R.string.little_mermaid,
     R.string.over_the_hedge,
     R.string.cinderella,
-    R.string.angry_birds
+    R.string.angry_birds,
+    R.string.gravity_falls,
+    R.string.adventure_time,
+    R.string.simpsons,
+    R.string.sponge_bob,
+    R.string.my_little_pony,
+    R.string.paw_patrol,
+    R.string.dalmatians,
+    R.string.trolls_world_tour,
+    R.string.queens_corgi,
+    R.string.spider_man,
+    R.string.inside_out,
+    R.string.good_dinosaur,
+    R.string.scooby_doo,
+    R.string.batman,
+    R.string.raya,
+    R.string.coco,
+    R.string.chip_dale,
+    R.string.peppa_pig,
+    R.string.winnie_pooh,
+    R.string.ducktales,
+    R.string.soul,
+    R.string.looney_tunes,
+    R.string.winx_club,
+    R.string.rick_morty,
+    R.string.mickey_mouse,
+    R.string.lego_movie,
+    R.string.powerpuff_girls,
+    R.string.grinch,
+    R.string.sing,
+    R.string.croods,
+    R.string.ferdinand,
+    R.string.smallfoot
 )

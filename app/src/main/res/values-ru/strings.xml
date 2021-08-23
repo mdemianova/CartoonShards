@@ -57,5 +57,37 @@
     <string name="over_the_hedge">Лесная братва</string>
     <string name="cinderella">Золушка</string>
     <string name="angry_birds">Angry Birds в кино</string>
+    <string name="gravity_falls">Гравити Фолз</string>
+    <string name="adventure_time">Время приключений</string>
+    <string name="simpsons">Симпсоны</string>
+    <string name="sponge_bob">Губка Боб</string>
+    <string name="my_little_pony">Дружба - это чудо</string>
+    <string name="paw_patrol">Щенячий патруль</string>
+    <string name="dalmatians">101 далматинец</string>
+    <string name="trolls_world_tour">Тролли. Мировой тур</string>
+    <string name="queens_corgi">Королевский корги</string>
+    <string name="spider_man">Человек-паук</string>
+    <string name="inside_out">Головоломка</string>
+    <string name="good_dinosaur">Хороший динозавр</string>
+    <string name="scooby_doo">Скуби-Ду</string>
+    <string name="batman">Бэтмен</string>
+    <string name="raya">Райя и последний дракон</string>
+    <string name="coco">Тайна Коко</string>
+    <string name="chip_dale">Чип и Дэйл</string>
+    <string name="peppa_pig">Свинка Пеппа</string>
+    <string name="winnie_pooh">Винни-Пух</string>
+    <string name="ducktales">Утиные истории</string>
+    <string name="soul">Душа</string>
+    <string name="winx_club">Клуб Винкс</string>
+    <string name="looney_tunes">Луни Тьюнс</string>
+    <string name="rick_morty">Рик и Морти</string>
+    <string name="mickey_mouse">Микки Маус</string>
+    <string name="lego_movie">Лего. Фильм</string>
+    <string name="powerpuff_girls">Суперкрошки</string>
+    <string name="grinch">Гринч</string>
+    <string name="sing">Зверопой</string>
+    <string name="croods">Семейка Крудс</string>
+    <string name="smallfoot">Смолфут</string>
+    <string name="ferdinand">Фердинанд</string>
 
 </resources>
