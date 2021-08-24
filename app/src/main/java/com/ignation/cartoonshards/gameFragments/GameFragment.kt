@@ -1,4 +1,4 @@
-package com.example.cartoonshards.gameFragments
+package com.ignation.cartoonshards.gameFragments
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -13,8 +13,8 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.cartoonshards.R
-import com.example.cartoonshards.databinding.FragmentGameBinding
+import com.ignation.cartoonshards.R
+import com.ignation.cartoonshards.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {
 

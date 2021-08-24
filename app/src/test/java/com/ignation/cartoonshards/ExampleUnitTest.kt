@@ -1,4 +1,4 @@
-package com.example.cartoonshards
+package com.ignation.cartoonshards
 
 import org.junit.Test
 

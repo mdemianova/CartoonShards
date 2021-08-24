@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/titleFragment"
-        android:name="com.example.cartoonshards.gameFragments.TitleFragment"
+        android:name="com.ignation.cartoonshards.gameFragments.TitleFragment"
         android:label="TitleFragment" >
         <action
             android:id="@+id/action_titleFragment_to_gameFragment"
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
-        android:name="com.example.cartoonshards.gameFragments.GameFragment"
+        android:name="com.ignation.cartoonshards.gameFragments.GameFragment"
         android:label="GameFragment" >
         <action
             android:id="@+id/action_gameFragment_to_finishFragment"
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/finishFragment"
-        android:name="com.example.cartoonshards.gameFragments.FinishFragment"
+        android:name="com.ignation.cartoonshards.gameFragments.FinishFragment"
         android:label="FinishFragment" >
         <argument
             android:name="score"

@@ -1,6 +1,6 @@
-package com.example.cartoonshards.gameFragments
+package com.ignation.cartoonshards.gameFragments
 
-import com.example.cartoonshards.R
+import com.ignation.cartoonshards.R
 
 data class Question(val image: Int, val answer: Int)
 

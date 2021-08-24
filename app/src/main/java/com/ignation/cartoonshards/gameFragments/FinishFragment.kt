@@ -1,4 +1,4 @@
-package com.example.cartoonshards.gameFragments
+package com.ignation.cartoonshards.gameFragments
 
 import android.content.Context
 import android.os.Bundle
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.cartoonshards.R
-import com.example.cartoonshards.databinding.FragmentFinishBinding
+import com.ignation.cartoonshards.R
+import com.ignation.cartoonshards.databinding.FragmentFinishBinding
 
 class FinishFragment : Fragment() {
 
