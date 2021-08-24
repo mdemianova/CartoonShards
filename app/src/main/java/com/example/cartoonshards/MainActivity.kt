@@ -1,8 +1,7 @@
 package com.example.cartoonshards
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.example.cartoonshards.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
