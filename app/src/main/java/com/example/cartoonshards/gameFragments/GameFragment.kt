@@ -85,6 +85,20 @@ class GameFragment : Fragment() {
         return binding.root
     }
 
+    override fun onPause() {
+        if (viewModel.isGameStarted) {
+            viewModel.saveTimer()
+        }
+        super.onPause()
+    }
+
+    override fun onResume() {
+        if (viewModel.isGameStarted) {
+            viewModel.restartTimer()
+        }
+        super.onResume()
+    }
+
     private fun setShardListener() {
         for (item in shards) {
             item.setOnClickListener {

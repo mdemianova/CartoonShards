@@ -9,7 +9,11 @@
         android:label="TitleFragment" >
         <action
             android:id="@+id/action_titleFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
+            app:destination="@id/gameFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
@@ -18,6 +22,10 @@
         <action
             android:id="@+id/action_gameFragment_to_finishFragment"
             app:destination="@id/finishFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
             app:popUpTo="@id/titleFragment"
             app:popUpToInclusive="false" />
     </fragment>
@@ -30,6 +38,11 @@
             app:argType="integer" />
         <action
             android:id="@+id/action_finishFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
+            app:destination="@id/gameFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/titleFragment" />
     </fragment>
 </navigation>

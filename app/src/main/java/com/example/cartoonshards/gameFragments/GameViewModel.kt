@@ -10,7 +10,7 @@ class GameViewModel : ViewModel() {
     companion object {
         private const val ONE_SECOND = 1000L
         private const val DEFAULT_GAME_TIME = 30000L
-        private const val INCREMENT_TIME = 2000L
+        private const val INCREMENT_TIME = 3000L
         private const val DECREMENT_TIME = 6000L
         private const val GAME_OVER = 0L
         private const val CORRECT_GUESS_POINTS = 100
@@ -59,9 +59,15 @@ class GameViewModel : ViewModel() {
     val isGameStarted: Boolean
     get() = _isGameStarted
 
+    private var _isTimerStarted = false
+    val isTimerStarted: Boolean
+    get() = _isTimerStarted
+
     private var _isTimeIncreasing = false
     val isTimeIncreasing: Boolean
     get() = _isTimeIncreasing
+
+    private var savedTime = 0L
 
     init {
         _answersArray.value = mutableListOf()
@@ -79,6 +85,7 @@ class GameViewModel : ViewModel() {
         }
 
         timer.start()
+
     }
 
     fun addTime() {
@@ -202,6 +209,25 @@ class GameViewModel : ViewModel() {
 
     fun onGameFinishComplete() {
         _eventGameFinish.value = false
+    }
+
+    fun saveTimer() {
+        savedTime = _currentTime.value!!.times(1000)
+        timer.cancel()
+    }
+
+    fun restartTimer() {
+        timer = object : CountDownTimer(savedTime, ONE_SECOND) {
+            override fun onTick(millisUntilFinished: Long) {
+                _currentTime.value = (millisUntilFinished / ONE_SECOND)
+            }
+
+            override fun onFinish() {
+                _currentTime.value = GAME_OVER
+                _eventGameFinish.value = true
+            }
+        }
+        timer.start()
     }
 
     override fun onCleared() {
