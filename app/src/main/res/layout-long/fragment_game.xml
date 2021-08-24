@@ -28,13 +28,13 @@
         android:id="@+id/image_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-
+        android:importantForAccessibility="no"
         android:adjustViewBounds="true"
         app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/tom_jerry" />
+        app:srcCompat="@drawable/empty_image" />
 
     <Button
         android:id="@+id/answer_1"

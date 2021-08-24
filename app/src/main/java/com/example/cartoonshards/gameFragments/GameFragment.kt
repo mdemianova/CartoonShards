@@ -188,15 +188,27 @@ class GameFragment : Fragment() {
 
     private fun timeAnimationFade() {
         binding.timeAnimation.alpha = 0f
-        val animator =  ObjectAnimator.ofFloat(binding.timeAnimation, View.ALPHA, 1f)
+        val animator = ObjectAnimator.ofFloat(binding.timeAnimation, View.ALPHA, 1f)
         animator.repeatCount = 1
         animator.repeatMode = ObjectAnimator.REVERSE
         if (viewModel.isTimeIncreasing) {
-            binding.timeAnimation.setTextColor(ContextCompat.getColor(requireContext(), R.color.correct_answer))
-            binding.timeAnimation.text = getString(R.string.time_delta, "+", viewModel.incrementTimeInSec)
+            binding.timeAnimation.setTextColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.correct_answer
+                )
+            )
+            binding.timeAnimation.text =
+                getString(R.string.time_delta, "+", viewModel.incrementTimeInSec)
         } else {
-            binding.timeAnimation.setTextColor(ContextCompat.getColor(requireContext(), R.color.wrong_answer))
-            binding.timeAnimation.text = getString(R.string.time_delta, "-", viewModel.decrementTimeInSec)
+            binding.timeAnimation.setTextColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.wrong_answer
+                )
+            )
+            binding.timeAnimation.text =
+                getString(R.string.time_delta, "-", viewModel.decrementTimeInSec)
         }
         animator.start()
     }

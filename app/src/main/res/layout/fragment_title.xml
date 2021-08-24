@@ -12,20 +12,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.18" />
 
-
-<!--    <ImageView-->
-<!--        android:id="@+id/background_image"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:scaleType="center"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.0"-->
-<!--        app:srcCompat="@drawable/orange_small" />-->
-
     <Button
         android:id="@+id/play_button"
         android:layout_width="wrap_content"
@@ -35,19 +21,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/title_image" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/title_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/asset_4" />
+        app:srcCompat="@drawable/asset_4"
+        android:contentDescription="@string/app_name"/>
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/welcome_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="24dp"
@@ -60,6 +47,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/play_button"
-        app:srcCompat="@drawable/title_picture" />
+        app:srcCompat="@drawable/title_picture"
+        android:contentDescription="@string/welcome"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

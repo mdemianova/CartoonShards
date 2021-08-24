@@ -57,15 +57,12 @@ class GameViewModel : ViewModel() {
 
     private var _isGameStarted = false
     val isGameStarted: Boolean
-    get() = _isGameStarted
+        get() = _isGameStarted
 
-    private var _isTimerStarted = false
-    val isTimerStarted: Boolean
-    get() = _isTimerStarted
 
     private var _isTimeIncreasing = false
     val isTimeIncreasing: Boolean
-    get() = _isTimeIncreasing
+        get() = _isTimeIncreasing
 
     private var savedTime = 0L
 
@@ -78,6 +75,7 @@ class GameViewModel : ViewModel() {
             override fun onTick(millisUntilFinished: Long) {
                 _currentTime.value = (millisUntilFinished / ONE_SECOND)
             }
+
             override fun onFinish() {
                 _currentTime.value = GAME_OVER
                 _eventGameFinish.value = true
@@ -235,8 +233,3 @@ class GameViewModel : ViewModel() {
         timer.cancel()
     }
 }
-
-//    // The String version of the current time
-//    val currentTimeString = Transformations.map(currentTime) { time ->
-//        DateUtils.formatElapsedTime(time)
-//    }
