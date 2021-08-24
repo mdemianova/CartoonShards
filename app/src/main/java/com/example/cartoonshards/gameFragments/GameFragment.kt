@@ -15,7 +15,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.cartoonshards.R
 import com.example.cartoonshards.databinding.FragmentGameBinding
-import com.ignation.cartoonshards.gameFragments.GameFragmentDirections
 
 class GameFragment : Fragment() {
 
