@@ -112,10 +112,8 @@ class GameFragment : Fragment() {
         for (item in answersButtonList) {
             item.setOnClickListener {
                 if (item.text == getString(viewModel.currentQuestion.value!!.answer)) {
-                    //correctAnswerScale(it)
                     viewModel.addScore()
                     viewModel.addTime()
-                    //showFullPicture()
                     viewModel.setupQuestionAndAnswers()
                     refreshShards()
                 } else {
