@@ -9,7 +9,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.cartoonshards"
+        applicationId "com.ignation.cartoonshards"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
