@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.gms.ads.AdRequest
 import com.ignation.cartoonshards.R
 import com.ignation.cartoonshards.databinding.FragmentFinishBinding
 
@@ -21,6 +22,9 @@ class FinishFragment : Fragment() {
     ): View? {
 
         binding = FragmentFinishBinding.inflate(layoutInflater)
+
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
 
         val finishFragmentArgs by navArgs<FinishFragmentArgs>()
         val sharedPref = requireActivity().getSharedPreferences(
