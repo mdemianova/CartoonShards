@@ -48,14 +48,13 @@
         android:id="@+id/answer_1"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:textAllCaps="false"
         android:textSize="15sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/image_view" />
 
     <Button
@@ -63,10 +62,9 @@
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"
         android:textAllCaps="false"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
         app:layout_constraintHorizontal_bias="0.785"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/answer_1" />
@@ -75,13 +73,12 @@
         android:id="@+id/answer_3"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:textAllCaps="false"
         android:textSize="15sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/answer_1" />
 
     <Button
@@ -90,10 +87,9 @@
         android:layout_height="55dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
         android:textAllCaps="false"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/answer_2" />
@@ -128,7 +124,7 @@
         android:id="@+id/shard1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#E83535"
+        android:background="@color/shard_pink"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/image_view"
@@ -138,7 +134,7 @@
         android:id="@+id/shard2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#F88989"
+        android:background="@color/shard_blue"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.636"
@@ -149,7 +145,7 @@
         android:id="@+id/shard3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#76E3C0"
+        android:background="@color/shard_green"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintHorizontal_bias="0.615"
@@ -160,7 +156,7 @@
         android:id="@+id/shard4"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#54DD4B"
+        android:background="@color/shard_yellow"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/image_view"
         app:layout_constraintHorizontal_bias="0.928"
@@ -171,7 +167,7 @@
         android:id="@+id/shard5"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#476CC6"
+        android:background="@color/shard_yellow"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/image_view"
@@ -181,7 +177,7 @@
         android:id="@+id/shard6"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#D977EA"
+        android:background="@color/shard_pink"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="1.0"
@@ -192,7 +188,7 @@
         android:id="@+id/shard7"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#03A9F4"
+        android:background="@color/shard_blue"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintHorizontal_bias="0.47"
@@ -203,7 +199,7 @@
         android:id="@+id/shard8"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#FFEF61"
+        android:background="@color/shard_green"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/image_view"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
@@ -214,20 +210,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.26" />
+        app:layout_constraintGuide_percent="0.265" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.74" />
+        app:layout_constraintGuide_percent="0.735" />
 
     <TextView
         android:id="@+id/shard9"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#F66233"
+        android:background="@color/shard_green"
         app:layout_constraintBottom_toTopOf="@+id/shard13"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
@@ -239,7 +235,7 @@
         android:id="@+id/shard10"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#009688"
+        android:background="@color/shard_yellow"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.392"
@@ -250,7 +246,7 @@
         android:id="@+id/shard11"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#E91E63"
+        android:background="@color/shard_pink"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintHorizontal_bias="0.38"
@@ -261,7 +257,7 @@
         android:id="@+id/shard12"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#0B20D8"
+        android:background="@color/shard_blue"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/shard8"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
@@ -271,7 +267,7 @@
         android:id="@+id/shard13"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#8F8F8F"
+        android:background="@color/shard_blue"
         app:layout_constraintBottom_toBottomOf="@+id/image_view"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
@@ -281,7 +277,7 @@
         android:id="@+id/shard14"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#CDDC39"
+        android:background="@color/shard_green"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.489"
@@ -292,7 +288,7 @@
         android:id="@+id/shard15"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#933535"
+        android:background="@color/shard_yellow"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintHorizontal_bias="0.47"
@@ -303,7 +299,7 @@
         android:id="@+id/shard16"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#FFD89F"
+        android:background="@color/shard_pink"
         app:layout_constraintBottom_toBottomOf="@+id/image_view"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/image_view"
@@ -324,14 +320,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.02" />
+        app:layout_constraintGuide_percent="0.03" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.98" />
+        app:layout_constraintGuide_percent="0.97" />
 
 
 
