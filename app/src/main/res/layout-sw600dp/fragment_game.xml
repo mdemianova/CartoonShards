@@ -9,26 +9,26 @@
         android:id="@+id/score_animation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/score_view"
-        app:layout_constraintEnd_toEndOf="@+id/score_view"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/score_view" />
 
     <TextView
         android:id="@+id/time_animation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/time_view"
-        app:layout_constraintEnd_toEndOf="@+id/time_view"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/time_view" />
 
     <TextView
         android:id="@+id/score_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/your_score_text"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -49,8 +49,8 @@
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:textAllCaps="false"
         android:textSize="15sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -62,7 +62,7 @@
         android:id="@+id/answer_2"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:textAllCaps="false"
         android:textSize="15sp"
@@ -77,7 +77,7 @@
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:textAllCaps="false"
         android:textSize="15sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -88,7 +88,7 @@
         android:id="@+id/answer_4"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:textAllCaps="false"
@@ -104,7 +104,7 @@
         android:layout_height="wrap_content"
         android:text="@string/time_left"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/score_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -122,7 +122,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.07" />
+        app:layout_constraintGuide_percent="0.1" />
 
     <TextView
         android:id="@+id/shard1"
