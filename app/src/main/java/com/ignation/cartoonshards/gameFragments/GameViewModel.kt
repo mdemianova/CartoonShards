@@ -4,6 +4,9 @@ import android.os.CountDownTimer
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.ignation.cartoonshards.data.AnswerStorage.allAnswersList
+import com.ignation.cartoonshards.data.QuestionStorage.allQuestionsList
+import com.ignation.cartoonshards.model.Question
 
 class GameViewModel : ViewModel() {
 
