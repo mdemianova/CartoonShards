@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.gms.ads.AdRequest
 import com.ignation.cartoonshards.R
 import com.ignation.cartoonshards.databinding.FragmentGameBinding
 
@@ -28,6 +29,9 @@ class GameFragment : Fragment() {
     ): View {
 
         binding = FragmentGameBinding.inflate(layoutInflater)
+
+        val adRequest = AdRequest.Builder().build()
+        binding.adView?.loadAd(adRequest)
 
         answersButtonList = listOf(
             binding.answer1, binding.answer2, binding.answer3, binding.answer4
