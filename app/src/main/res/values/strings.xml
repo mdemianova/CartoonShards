@@ -94,6 +94,22 @@
     <string name="croods">The Croods</string>
     <string name="smallfoot">Smallfoot</string>
     <string name="ferdinand">Ferdinand</string>
-
+    <string name="spirit_untamed">Spirit Untamed</string>
+    <string name="nine">9</string>
+    <string name="rango">Rango</string>
+    <string name="princess_and_frog">Princess and the Frog</string>
+    <string name="zambezia">Zambezia</string>
+    <string name="planet_51">Planet 51</string>
+    <string name="pocahontas">Pocahontas</string>
+    <string name="mulan">Mulan</string>
+    <string name="horton_hears">Horton Hears a Who!</string>
+    <string name="big_hero_6">Big Hero 6</string>
+    <string name="kikoriki">Kikoriki</string>
+    <string name="hey_arnold">Hey Arnold!</string>
+    <string name="steven_universe">Steven Universe</string>
+    <string name="pj_masks">PJ Masks</string>
+    <string name="kim_possible">Kim Possible</string>
+    <string name="sonic_boom">Sonic Boom</string>
+    <string name="bambi">Bambi</string>
 
 </resources>

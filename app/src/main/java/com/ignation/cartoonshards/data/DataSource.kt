@@ -324,6 +324,74 @@ object QuestionStorage {
         Question(
             image = R.drawable.smallfoot,
             answer = R.string.smallfoot
+        ),
+        Question(
+            image = R.drawable.spirit,
+            answer = R.string.spirit_untamed
+        ),
+        Question(
+            image = R.drawable.nine,
+            answer = R.string.nine
+        ),
+        Question(
+            image = R.drawable.rango,
+            answer = R.string.rango
+        ),
+        Question(
+            image = R.drawable.princess_and_frog,
+            answer = R.string.princess_and_frog
+        ),
+        Question(
+            image = R.drawable.zambezia,
+            answer = R.string.zambezia
+        ),
+        Question(
+            image = R.drawable.planet51,
+            answer = R.string.planet_51
+        ),
+        Question(
+            image = R.drawable.pocahontas,
+            answer = R.string.pocahontas
+        ),
+        Question(
+            image = R.drawable.mulan,
+            answer = R.string.mulan
+        ),
+        Question(
+            image = R.drawable.horton,
+            answer = R.string.horton_hears
+        ),
+        Question(
+            image = R.drawable.big_hero,
+            answer = R.string.big_hero_6
+        ),
+        Question(
+            image = R.drawable.kikoriki,
+            answer = R.string.kikoriki
+        ),
+        Question(
+            image = R.drawable.hey_arnold,
+            answer = R.string.hey_arnold
+        ),
+        Question(
+            image = R.drawable.steven_universe,
+            answer = R.string.steven_universe
+        ),
+        Question(
+            image = R.drawable.pj_masks,
+            answer = R.string.pj_masks
+        ),
+        Question(
+            image = R.drawable.kim_possible,
+            answer = R.string.kim_possible
+        ),
+        Question(
+            image = R.drawable.sonic_boom,
+            answer = R.string.sonic_boom
+        ),
+        Question(
+            image = R.drawable.bambi,
+            answer = R.string.bambi
         )
     )
 }
@@ -410,6 +478,23 @@ object AnswerStorage {
         R.string.sing,
         R.string.croods,
         R.string.ferdinand,
-        R.string.smallfoot
+        R.string.smallfoot,
+        R.string.spirit_untamed,
+        R.string.nine,
+        R.string.rango,
+        R.string.princess_and_frog,
+        R.string.zambezia,
+        R.string.planet_51,
+        R.string.pocahontas,
+        R.string.mulan,
+        R.string.horton_hears,
+        R.string.big_hero_6,
+        R.string.kikoriki,
+        R.string.hey_arnold,
+        R.string.steven_universe,
+        R.string.pj_masks,
+        R.string.kim_possible,
+        R.string.sonic_boom,
+        R.string.bambi
     )
 }
