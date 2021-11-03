@@ -11,9 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        app:adSize="BANNER"
         app:adUnitId="ca-app-pub-1533346815742678/3094282337"
+        app:adSize="BANNER"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,16 +23,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.18" />
+        app:layout_constraintGuide_percent="0.14" />
 
-    <Button
-        android:id="@+id/play_button"
+    <androidx.appcompat.widget.AppCompatButton
+
+
+    android:id="@+id/play_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:background="@drawable/gradient_button"
+        android:padding="14dp"
         android:text="@string/play"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_image" />
 
@@ -49,17 +55,17 @@
         android:id="@+id/welcome_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="32dp"
+
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="16dp"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/welcome"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/play_button"
-        app:srcCompat="@drawable/title_picture"
-        android:contentDescription="@string/welcome"/>
+        app:srcCompat="@drawable/title_picture" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

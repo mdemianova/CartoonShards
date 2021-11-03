@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Cartoon Shards</string>
 
-    <string name="play">Play</string>
+    <string name="play">Play Game</string>
     <string name="time_left">Time %1$s</string>
     <string name="your_score_text">Score: %d</string>
     <string name="high_score">High Score: %d</string>

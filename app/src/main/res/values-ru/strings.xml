@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Угадай мультик</string>
-    <string name="play">Играть</string>
+    <string name="play">Начать игру</string>
     <string name="time_left">Время %1$s</string>
     <string name="your_score_text">Счёт: %d</string>
     <string name="high_score">Лучший счёт: %d</string>
