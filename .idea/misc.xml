@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/korch/AndroidStudioProjects/CartoonShards/app/src/main/res/layout-long/fragment_game.xml" value="0.1" />
+        <entry key="..\:/Users/korch/AndroidStudioProjects/CartoonShards/app/src/main/res/layout-long/fragment_game.xml" value="0.4" />
+        <entry key="..\:/Users/korch/AndroidStudioProjects/CartoonShards/app/src/main/res/layout-sw600dp/fragment_game.xml" value="0.1572265625" />
+        <entry key="..\:/Users/korch/AndroidStudioProjects/CartoonShards/app/src/main/res/layout/fragment_game.xml" value="0.16770833333333332" />
       </map>
     </option>
   </component>
