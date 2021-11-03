@@ -12,18 +12,28 @@ import com.ignation.cartoonshards.databinding.FragmentTitleBinding
 
 class TitleFragment : Fragment() {
 
-    private lateinit var binding: FragmentTitleBinding
+    private var _binding: FragmentTitleBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        binding = FragmentTitleBinding.inflate(layoutInflater)
+        _binding = FragmentTitleBinding.inflate(layoutInflater)
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.playButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
         }
-
         val adRequest = AdRequest.Builder().build()
         binding.adView.loadAd(adRequest)
-        return binding.root
+    }
+
+    // Reset the _binding value to null, to escape the memory leaks.
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
