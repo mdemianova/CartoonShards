@@ -4,15 +4,15 @@ import android.os.CountDownTimer
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.ignation.cartoonshards.data.AnswerStorage.allAnswersList
 import com.ignation.cartoonshards.data.QuestionStorage.allQuestionsList
+import com.ignation.cartoonshards.data.QuestionStorage.setAnswersList
 import com.ignation.cartoonshards.model.Question
 
 class GameViewModel : ViewModel() {
 
     companion object {
         private const val ONE_SECOND = 1000L
-        private const val DEFAULT_GAME_TIME = 30000L
+        private const val DEFAULT_GAME_TIME = 45000L
         private const val INCREMENT_TIME = 3000L
         private const val DECREMENT_TIME = 6000L
         private const val GAME_OVER = 0L
@@ -39,6 +39,8 @@ class GameViewModel : ViewModel() {
         get() = _score
 
     private var timer: CountDownTimer
+
+    private val allAnswersList = setAnswersList()
 
     private val _currentTime = MutableLiveData<Long>()
     val currentTime: LiveData<Long>
@@ -84,9 +86,7 @@ class GameViewModel : ViewModel() {
                 _eventGameFinish.value = true
             }
         }
-
         timer.start()
-
     }
 
     fun addTime() {

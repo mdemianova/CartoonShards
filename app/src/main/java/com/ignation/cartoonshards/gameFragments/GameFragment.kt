@@ -19,15 +19,20 @@ import com.ignation.cartoonshards.databinding.FragmentGameBinding
 class GameFragment : Fragment() {
 
     private val viewModel: GameViewModel by viewModels()
-    private lateinit var binding: FragmentGameBinding
+    private var _binding: FragmentGameBinding? = null
+    private val binding get() = _binding!!
     private lateinit var shards: List<View>
     private lateinit var answersButtonList: List<Button>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
+        _binding = FragmentGameBinding.inflate(layoutInflater)
 
-        binding = FragmentGameBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         answersButtonList = listOf(
             binding.answer1, binding.answer2, binding.answer3, binding.answer4
@@ -81,8 +86,6 @@ class GameFragment : Fragment() {
 
         setShardListener()
         setAnswerListener()
-
-        return binding.root
     }
 
     override fun onPause() {
@@ -97,6 +100,11 @@ class GameFragment : Fragment() {
             viewModel.restartTimer()
         }
         super.onResume()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     private fun setShardListener() {

@@ -392,109 +392,26 @@ object QuestionStorage {
         Question(
             image = R.drawable.bambi,
             answer = R.string.bambi
+        ),
+        Question(
+            image = R.drawable.alchemist,
+            answer = R.string.alchemist
+        ),
+        Question(
+            image = R.drawable.naruto,
+            answer = R.string.naruto
+        ),
+        Question(
+            image = R.drawable.pokemon,
+            answer = R.string.pokemon
         )
     )
-}
 
-object AnswerStorage {
-    val allAnswersList: List<Int> = listOf(
-        R.string.lilo_and_stitch,
-        R.string.tom_and_jerry,
-        R.string.finding_nemo,
-        R.string.frozen,
-        R.string.lion_king,
-        R.string.ladybug_and_cat_noir,
-        R.string.ainbo,
-        R.string.luca,
-        R.string.puss_in_boots,
-        R.string.tangled,
-        R.string.vivo,
-        R.string.wall_e,
-        R.string.wish_dragon,
-        R.string.despicable_me,
-        R.string.cars,
-        R.string.shrek,
-        R.string.hotel_transylvania,
-        R.string.monsters_inc,
-        R.string.how_to_train_your_dragon,
-        R.string.kung_fu_panda,
-        R.string.monsters_university,
-        R.string.ratatouille,
-        R.string.rio,
-        R.string.rise_guardians,
-        R.string.brave,
-        R.string.wreck_it_ralph,
-        R.string.ice_age,
-        R.string.up,
-        R.string.the_incredibles,
-        R.string.the_smurfs,
-        R.string.zootopia,
-        R.string.shark_tale,
-        R.string.bolt,
-        R.string.madagascar,
-        R.string.hercules,
-        R.string.moana,
-        R.string.minions,
-        R.string.beauty_beast,
-        R.string.boss_baby,
-        R.string.jungle_book,
-        R.string.toy_story,
-        R.string.alvin_chipmunks,
-        R.string.planes,
-        R.string.aladdin,
-        R.string.balto,
-        R.string.little_mermaid,
-        R.string.over_the_hedge,
-        R.string.cinderella,
-        R.string.angry_birds,
-        R.string.gravity_falls,
-        R.string.adventure_time,
-        R.string.simpsons,
-        R.string.sponge_bob,
-        R.string.my_little_pony,
-        R.string.paw_patrol,
-        R.string.dalmatians,
-        R.string.trolls_world_tour,
-        R.string.queens_corgi,
-        R.string.spider_man,
-        R.string.inside_out,
-        R.string.good_dinosaur,
-        R.string.scooby_doo,
-        R.string.batman,
-        R.string.raya,
-        R.string.coco,
-        R.string.chip_dale,
-        R.string.peppa_pig,
-        R.string.winnie_pooh,
-        R.string.ducktales,
-        R.string.soul,
-        R.string.looney_tunes,
-        R.string.winx_club,
-        R.string.rick_morty,
-        R.string.mickey_mouse,
-        R.string.lego_movie,
-        R.string.powerpuff_girls,
-        R.string.grinch,
-        R.string.sing,
-        R.string.croods,
-        R.string.ferdinand,
-        R.string.smallfoot,
-        R.string.spirit_untamed,
-        R.string.nine,
-        R.string.rango,
-        R.string.princess_and_frog,
-        R.string.zambezia,
-        R.string.planet_51,
-        R.string.pocahontas,
-        R.string.mulan,
-        R.string.horton_hears,
-        R.string.big_hero_6,
-        R.string.kikoriki,
-        R.string.hey_arnold,
-        R.string.steven_universe,
-        R.string.pj_masks,
-        R.string.kim_possible,
-        R.string.sonic_boom,
-        R.string.bambi
-    )
+    fun setAnswersList(): List<Int> {
+        val answersTest = mutableListOf<Int>()
+        for (item in allQuestionsList) {
+            answersTest.add(item.answer)
+        }
+        return answersTest.toList()
+    }
 }

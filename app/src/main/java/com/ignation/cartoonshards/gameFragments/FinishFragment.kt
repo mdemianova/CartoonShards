@@ -14,14 +14,20 @@ import com.ignation.cartoonshards.databinding.FragmentFinishBinding
 
 class FinishFragment : Fragment() {
 
-    private lateinit var binding: FragmentFinishBinding
+    private var _binding: FragmentFinishBinding? = null
+    private val binding get() = _binding!!
     private val scoreKey = "score_key"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentFinishBinding.inflate(layoutInflater)
+        _binding = FragmentFinishBinding.inflate(layoutInflater)
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         val adRequest = AdRequest.Builder().build()
         binding.adView.loadAd(adRequest)
@@ -45,7 +51,10 @@ class FinishFragment : Fragment() {
         binding.playAgainButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_finishFragment_to_gameFragment)
         }
+    }
 
-        return binding.root
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
